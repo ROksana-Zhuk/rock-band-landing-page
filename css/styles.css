@@ -12,7 +12,6 @@ h2,
 h3,
 h4,
 h5,
-h5,
 p {
     margin: 0px;
 }
@@ -43,9 +42,15 @@ ul {
 
 @media only screen and (min-width: 768px) {
   .container {  
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1120px;
     padding: 0 120px;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .container {  
+    max-width: 1200px;
   }
 }
 
@@ -54,33 +59,39 @@ ul {
 .header-nav {
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    align-items: center;
+    padding: 10px 20px;
     background: #0b0b10;
+}
+
+@media only screen and (min-width: 768px) {
+.header-nav {
+    padding: 15px 80px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
 .header-nav {
-    display: flex;
-    justify-content: space-between;
     padding: 20px 190px;
-    background: #0b0b10;
+    
   }
 }
 
 .logo {
-    font-size: 14px;         
-    font-weight: 400;        
+    font-size: 12px;
+    font-weight: 400;
     color: #ffffff;
-    letter-spacing: 1.5px;    
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
   }
 
 @media only screen and (min-width: 768px) {
 .logo {
     font-size: 16px;         
     font-weight: 700;        
-    color: #ffffff;
-    letter-spacing: 1.5px;    
+    color: #ffffff;    
     cursor: pointer;
   }
 }
@@ -93,32 +104,64 @@ ul {
 
 @media only screen and (min-width: 768px) {
     .nav-list {
-      gap: 25px;
-}
+      gap: 20px;
+  }
 }
 
+@media only screen and (min-width: 1200px) {
+    .nav-list {
+      gap: 25px;
+  }
+}
 
 nav a {
     color: #ffffff;
     transition: color 0.2s ease;
+    font-size: 14px;
 }
 
 nav a:hover {
     color: aqua;
 }
 
-/* --- HERO --- */
-h1 {
-    font-size: 20px;
-    font-weight: 600;
+
+.header-nav { position: relative; }
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    align-items: center;
+}
+.nav-toggle svg {
+    width: 22px;
+    height: 22px;
+    display: block;
 }
 
-@media only screen and (min-width: 768px) {
-  h1 {
-      font-size: 40px;
-      font-weight: 1000;
-  }
+@media (max-width: 767px) {
+    .nav-toggle { display: inline-flex; }
+    .nav-list { display: none; }
+    .nav-list.open {
+        display: flex;
+        position: absolute;
+        top: 56px;
+        right: 16px;
+        background: #0b0b10;
+        padding: 12px;
+        border-radius: 10px;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 180px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        z-index: 60;
+    }
+    .nav-list.open a { padding: 8px 12px; display: block; }
 }
+
+/* --- HERO --- */
 
 .hero {
     background-image: linear-gradient( rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.34) ),
@@ -129,6 +172,22 @@ h1 {
       transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);  
 }
 
+h1 {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+      font-size: 40px;
+      font-weight: 1000;
+  }
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+}
 .hero-content {
     text-align: left;
     padding: 20px 40px;
@@ -181,12 +240,14 @@ table {
 
 @media only screen and (min-width: 768px) {
     table {
-    width: 100%;
     margin: 40px auto;
-    background: #15151f;
-    border-collapse: collapse;
-    overflow: hidden;
-    border-radius: 12px;
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+    table {
+    margin: 40px auto;
     margin-bottom: 100px;
   }
 }
@@ -206,6 +267,80 @@ table th {
     padding: 15px;
     border-bottom: 1px solid rgb(55, 54, 54);
     background-color: #1c1c26;
+}
+
+@media (max-width: 767px) {
+    table {
+        border: none;
+        background: transparent;
+        margin-bottom: 10px;
+    }
+
+    table thead {
+        display: block;
+    }
+
+    table thead tr {
+        display: none;
+    }
+
+    table thead tr.main-table-title,
+    table thead tr:first-child {
+        display: table-row;
+    }
+
+    table thead tr.main-table-title th {
+        background: transparent;
+        border-bottom: none;
+        padding: 0 0 10px 0;
+    }
+
+    table thead tr.main-table-title h3 {
+        margin: 0;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    tbody tr {
+        margin-bottom: 12px;
+        background: #15151f;
+        padding: 12px 14px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+
+    td {
+        padding: 6px 0;
+        border-bottom: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+
+    td::before {
+        content: attr(data-label);
+        color: #c1bfbf;
+        font-weight: 600;
+        font-size: 13px;
+        flex: 1 1 auto;
+    }
+
+    td[data-label="Дія"] {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .ticket-btn {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        min-width: 120px;
+    }
 }
 
 h3 {
@@ -229,20 +364,45 @@ h3 {
 .ticket-btn:hover {
     background: #ff5a6b;
 }
-
 /* --- MEMBERS --- */
 h2 {
     text-align: center;
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
+
+@media only screen and (min-width: 768px) {
+    h2 {
+        margin-bottom: 30px;
+    }
+}
+
 .members {
     display: flex;
     justify-content: center;
-    gap: 120px;
-    padding: 40px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
+
+@media only screen and (min-width: 768px) {
+    .members {
+        gap: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .members {
+        flex-direction: row;
+        gap: 100px;
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+}
+
 .member-card {
     background: #1c1c26;       
     border: 1px solid rgb(55, 54, 54);    
@@ -254,9 +414,37 @@ h2 {
 }
 
 .member-card img {
-    height: 200px;
-    object-fit: cover;
-    width: 260px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+    .member-card img {
+        max-width: 500px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .member-card img {
+        max-width: 300px;
+    }
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #ffda4f;
+    outline-offset: 2px;
 }
 
 .member-card p {
@@ -273,13 +461,27 @@ h2 {
 
 .story {
     background: linear-gradient(to left, #3f042352, #31252470, #131824 );
-    padding: 50px 0;
+    padding: 20px 0;
+}
+
+@media screen and (min-width: 768px) {
+    .story {
+        padding: 50px 0;
+    }
 }
 
 .story-title {
     text-align: left;
-    margin-top: 20px;
-    font-size: 28px;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+@media screen and (min-width: 768px) {
+    .story-title {
+        text-align: left;
+        margin-top: 20px;
+        font-size: 28px;
+    }
 }
 
 .story p {
@@ -290,7 +492,7 @@ h2 {
     float: right;      
     width: 40%;          
     margin-bottom: 30px;
-    height: 37vh;
+    
 }
 
 @media (max-width: 768px) {
@@ -298,20 +500,33 @@ h2 {
       float: none;
       width: 100%;
       margin: 20px 0;
+      height: 37vh;
     }
 }
 
 .contacts {
     background: linear-gradient(to right, #5f073452, #48343370, #131824 );
-    padding-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .contacts {
+        padding-bottom: 50px;
+    }
+    
 }
 
 .contacts-title {
     text-align: center;
-    margin-bottom: 20px;
-    padding-top: 50px;
+    margin-bottom: 15px;
+    padding-top: 15px;
 }
 
+@media screen and (min-width: 768px) {
+    .contacts-title {
+         padding-top: 50px;
+    }
+}
 .contacts-text {
     text-align: center;
     margin-bottom: 30px;
@@ -334,7 +549,13 @@ h2 {
 
 .form-row {
    display: flex;
-   gap: 15px;
+   gap: 5px;
+}
+
+@media screen and (min-width: 768px) {
+    .form-row {
+        gap: 15px;
+    }
 }
 
 .form-row input {
@@ -382,8 +603,20 @@ input, textarea {
     border-radius: 6px;
     cursor: pointer;
     margin: 0 auto;
-    margin-left: 0;
+    margin-bottom: 20px;
 }
+
+.btn-secondary:hover {
+    background: #ff5a6b;
+}
+
+@media screen and (min-width: 1200px) {
+    .btn-secondary {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+
 .map {
     flex: 1; 
     min-height: 400px;
@@ -395,8 +628,15 @@ input, textarea {
 }
 
 .map-title {
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 20px;
+    
+}
+
+@media screen and (min-width: 768px) {
+    .map-title {
+       font-size: 18px;;
+    }
 }
 
 .map-wrapper {
@@ -407,14 +647,19 @@ input, textarea {
     height: 300px;
 }
 
+.contact-container {
+    flex-direction: column;
+    display: block;
+}
 
-@media (max-width: 768px) {
+@media screen and (min-width: 1200px) {
   .contact-container {
-      flex-direction: column;
+    display: flex;
+      flex-direction: row;
   }
 
   .form-row {
-      flex-direction: column;
+      flex-direction: row;
   }
 }
 
@@ -424,20 +669,39 @@ input, textarea {
     justify-content: space-between;
     align-items: flex-start;
     font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-container {
     margin-top: 40px;
+  }
 }
 
 .footer-left p {
-    margin: 5px 0;
+    margin: 15px 0;
     color:#afadad;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
+
+@media screen and (min-width: 768px) {
+  .footer-left p {
+    margin-bottom: 40px;
+  }
+}
+
 
 .footer-right {
     display: flex;
     gap: 6px;
     align-items: center;
 }
+
+@media screen and (min-width: 768px) {
+  .footer-right {
+    margin-bottom: 40px;
+  }
+}
+
 
 .footer-right .social-link {
     color:#afadad;
@@ -455,6 +719,12 @@ input, textarea {
     top: -1px;        
 }
 
+@media screen and (max-width: 767px) {
+  .footer-container {
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -465,7 +735,6 @@ input, textarea {
     text-align: left;
   }
 }
-
 
 
 .contact-line span {
@@ -503,10 +772,41 @@ input, textarea {
 
 #popup-close {
     position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 26px;
+    right: 14px;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.06);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
     cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+    z-index: 10;
+}
+
+#popup-close:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-2px);
+}
+
+#popup-close:active {
+    transform: translateY(0);
+}
+
+#popup-close:focus-visible {
+    outline: 3px solid rgba(255,218,79,0.9);
+    outline-offset: 3px;
+}
+
+.ticket-input {
+    background: #333348;
 }
 
 
@@ -514,95 +814,5 @@ input, textarea {
 
 
 
-
-
-/* --- MEDIA QUERIES (TABLET AND UP) --- */
-/* @media only screen and (min-width: 768px) {
-    .container {
-        max-width: 960px;    
-        padding: 0 40px;
-    }
-    .header-nav {
-        padding: 10px 40px;
-    }
-    .logo {
-        font-size: 16px;        
-        font-weight: 700;        
-        color: #ffffff;
-        letter-spacing: 1.5px;    
-        cursor: pointer;
-    }
-    .nav-list {
-        gap: 25px;
-    }
-    h1 {
-        font-size: 40px;
-        font-weight: 1000;
-    }
-    .hero-content {
-        padding: 80px 120px;
-        gap: 30px;
-    }
-    table {
-        margin: 40px auto;
-        margin-bottom: 100px;
-    }
-    .members {
-        flex-direction: row;
-        gap: 40px;
-        padding: 40px;
-        margin-bottom: 40px;
-    }
-    .member-card img {
-        height: 200px;
-        width: 260px;
-    }
-    .story {
-        padding: 50px 0;
-    }
-    .story-img {
-        float: right;      
-        width: 40%;          
-        margin-bottom: 30px;
-        height: 37vh;
-    }
-    .contacts-title {
-        padding-top: 50px;
-    }
-    .contact-container {
-        flex-direction: row;
-        gap: 40px;
-    }
-    .form-row {
-        flex-direction: row;
-    }
-    .map {
-        min-height: 400px;
-        height: 200px;
-    }
-    .map-wrapper {
-        height: 300px;
-    }
-    .footer-container {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    .footer-right {
-        text-align: left;
-    }
-}
-
-/* --- MEDIA QUERIES (DESKTOP AND UP) --- */
-/* @media only screen and (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 120px;
-    }
-    .header-nav {
-        padding: 20px 190px;
-    }
-    .members {
-        gap: 120px;
-    }
-} */ 
+   
+   
