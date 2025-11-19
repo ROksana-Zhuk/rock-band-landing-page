@@ -17,7 +17,7 @@ p {
 }
 
 p {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 a {
@@ -51,7 +51,7 @@ ul {
 @media only screen and (min-width: 1200px) {
     .container { 
         max-width: 1200px; 
-        padding: 0 170px;
+        padding: 0 140px;
     
     }
 }
@@ -215,7 +215,7 @@ h1 {
 
 @media only screen and (min-width: 1200px) {
 .hero-content { 
-    padding: 120px 170px;
+    padding: 120px 140px;
   }
 }
 
@@ -416,7 +416,7 @@ h2 {
     .members {
         flex-direction: row;
         gap: 70px;
-        padding: 0 20px 30px 20px;
+        padding: 0 30px 30px 30px;
         margin-bottom: 40px;
     }
 
@@ -511,8 +511,6 @@ textarea:focus-visible {
 .story-img {
     float: right;      
     width: 40%;          
-    margin-bottom: 30px;
-
 }
 
 @media (max-width: 768px) {
