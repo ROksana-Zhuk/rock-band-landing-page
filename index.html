@@ -14,6 +14,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -113,19 +114,94 @@
         <ul class="members">
           <li class="member">
             <div class="member-card">
-              <img src="images/guitarist.jpg" alt="Максим — гітара" loading="lazy">
+              <picture>
+                <!-- WebP sources with media queries (like concert image) -->
+                <source 
+                  media="(max-width: 767px)"
+                  srcset="images/band-members/guitarist_mobile.webp"
+                  type="image/webp">
+                <source 
+                  media="(min-width: 768px) and (max-width: 1199px)"
+                  srcset="images/band-members/guitarist_tablet.webp"
+                  type="image/webp">
+                <source 
+                  media="(min-width: 1200px)"
+                  srcset="images/band-members/guitarist_desktop.webp"
+                  type="image/webp">
+                <!-- JPEG fallbacks with media queries -->
+                <source 
+                  media="(max-width: 767px)"
+                  srcset="images/band-members/guitarist_mobile.jpg">
+                <source 
+                  media="(min-width: 768px) and (max-width: 1199px)"
+                  srcset="images/band-members/guitarist_tablet.jpg">
+                <source 
+                  media="(min-width: 1200px)"
+                  srcset="images/band-members/guitarist_desktop.jpg">
+                <img src="images/band-members/guitarist_desktop.jpg" alt="Максим — гітара" loading="lazy">
+              </picture>
               <p>Максим — гітара</p>
             </div>
           </li>
           <li class="member">
             <div class="member-card">
-              <img src="images/vocalist.jpg" alt="Олена — вокал" loading="lazy">
+              <picture>
+                <!-- WebP sources with media queries (like concert image) -->
+                <source 
+                  media="(max-width: 767px)"
+                  srcset="images/band-members/vocalist_mobile.webp"
+                  type="image/webp">
+                <source 
+                  media="(min-width: 768px) and (max-width: 1199px)"
+                  srcset="images/band-members/vocalist_tablet.webp"
+                  type="image/webp">
+                <source 
+                  media="(min-width: 1200px)"
+                  srcset="images/band-members/vocalist_desktop.webp"
+                  type="image/webp">
+                <!-- JPEG fallbacks with media queries -->
+                <source 
+                  media="(max-width: 767px)"
+                  srcset="images/band-members/vocalist_mobile.jpg">
+                <source 
+                  media="(min-width: 768px) and (max-width: 1199px)"
+                  srcset="images/band-members/vocalist_tablet.jpg">
+                <source 
+                  media="(min-width: 1200px)"
+                  srcset="images/band-members/vocalist_desktop.jpg">
+                <img src="images/band-members/vocalist_desktop.jpg" alt="Олена — вокал" loading="lazy">
+              </picture>
               <p>Олена — вокал</p>
             </div>
           </li>
           <li class="member">
             <div class="member-card">
-              <img src="images/drummer.jpg" alt="Тарас — барабани" loading="lazy">
+              <picture>
+                <!-- WebP sources with media queries (like concert image) -->
+                <source 
+                  media="(max-width: 767px)"
+                  srcset="images/band-members/drummer_mobile.webp"
+                  type="image/webp">
+                <source 
+                  media="(min-width: 768px) and (max-width: 1199px)"
+                  srcset="images/band-members/drummer_tablet.webp"
+                  type="image/webp">
+                <source 
+                  media="(min-width: 1200px)"
+                  srcset="images/band-members/drummer_desktop.webp"
+                  type="image/webp">
+                <!-- JPEG fallbacks with media queries -->
+                <source 
+                  media="(max-width: 767px)"
+                  srcset="images/band-members/drummer_mobile.jpg">
+                <source 
+                  media="(min-width: 768px) and (max-width: 1199px)"
+                  srcset="images/band-members/drummer_tablet.jpg">
+                <source 
+                  media="(min-width: 1200px)"
+                  srcset="images/band-members/drummer_desktop.jpg">
+                <img src="images/band-members/drummer_desktop.jpg" alt="Тарас — барабани" loading="lazy">
+              </picture>
               <p>Тарас — барабани</p>
             </div>
           </li>
@@ -136,9 +212,34 @@
     <section id="story" class="story">
       <div class="container"> 
         <h2 class="story-title">Наша історія</h2>
-        <img src="images/concert.jpeg" class="story-img" alt="Концерт Грим та Грім" loading="lazy">
+        <picture>
+          <!-- WebP sources with responsive images -->
+          <source 
+            media="(max-width: 767px)"
+            srcset="images/concert/concert_mobile.webp"
+            type="image/webp">
+          <source 
+            media="(min-width: 768px) and (max-width: 1199px)"
+            srcset="images/concert/concert_tablet.webp"
+            type="image/webp">
+          <source 
+            media="(min-width: 1200px)"
+            srcset="images/concert/concert_desktop.webp"
+            type="image/webp">
+          <!-- JPEG fallbacks with responsive images -->
+          <source 
+            media="(max-width: 767px)"
+            srcset="images/concert/concert_mobile.jpg">
+          <source 
+            media="(min-width: 768px) and (max-width: 1199px)"
+            srcset="images/concert/concert_tablet.jpg">
+          <source 
+            media="(min-width: 1200px)"
+            srcset="images/concert/concert_desktop.jpg">
+          <img src="images/concert/concert_desktop.jpg" class="story-img" alt="Концерт Грим та Грім" loading="lazy">
+        </picture>
         <p>
-        «Грим та Грім» народився з бажання створювати музику, яка відчувається серцем. Ми почали свій шлях у маленькій студії в центрі Києва, де кожен акард, кожне слово було наповнене емоціями та переживаннями. Це було місце, де народжувалися наші перші пісні, де ми вчились грати разом як єдиний організм.
+        «Грим та Грім» народився з бажання створювати музику, яка відчувається серцем. Ми почали свій шлях у маленькій студії в центрі Києва, де кожен акорд, кожне слово було наповнене емоціями та переживаннями. Це було місце, де народжувалися наші перші пісні, де ми вчились грати разом як єдиний організм.
         </p>
         <p> 
         За роки нашої діяльності ми виступили на десятках сцен, від невеликих клубів до великих фестивалів. Наша музика — це поєднання традиційного року з сучасними елементами, що робить її унікальною та впізнаваною. Ми не боїмося експерементувати з звуком, додаючи електронні елементи або народні інструменти.
@@ -172,7 +273,7 @@
 
             <div class="form-group">
               <label class="form-label" for="contact-message">Повідомлення</label>
-              <textarea id="contact-message" name="contact_message" placeholder="Розкажи про свої ідеї..." required></textarea>
+              <textarea id="contact-message" name="contact_message" placeholder="Розкажи про свої ідеї..." required minlength="10"></textarea>
             </div>
 
             <button type="submit" class="btn-secondary">Відправити</button>
