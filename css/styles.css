@@ -415,11 +415,17 @@ h2 {
 @media only screen and (min-width: 1200px) {
     .members {
         flex-direction: row;
-        gap: 100px;
-        padding: 40px;
+        gap: 70px;
+        padding: 0 20px 30px 20px;
         margin-bottom: 40px;
     }
+
+    .member {
+        width: calc((100% - 140px) / 3)
+    }
+
 }
+
 
 .member-card {
     background: #1c1c26;       
@@ -429,6 +435,7 @@ h2 {
     text-align: left;       
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding-bottom: 0;
+    height: 100%;
 }
 
 .member-card img {
@@ -437,15 +444,10 @@ h2 {
         object-fit: cover;
 }
 
-@media screen and (min-width: 768px) {
-    .member-card img {
-        max-width: 600px;
-    }
-}
-
 @media screen and (min-width: 1200px) {
     .member-card img {
         max-width: 300px;
+        height: 80%;
     }
 }
 
