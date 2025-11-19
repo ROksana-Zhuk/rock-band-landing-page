@@ -4,6 +4,9 @@ const popupClose = document.getElementById("popup-close");
 const ticketButtons = document.querySelectorAll(".ticket-btn");
 const heroButton = document.querySelector(".hero .btn-primary");
 const ticketForm = document.getElementById("ticket-form");
+const contactPopupOverlay = document.getElementById("contact-popup-overlay");
+const contactPopupClose = document.getElementById("contact-popup-close");
+const contactForm = document.getElementById("contact-form");
 
 // Відкрити pop-up
 function openPopup() {
@@ -89,6 +92,49 @@ if (navToggle) {
         if (e.key === 'Escape') {
             if (navList && navList.classList.contains('open')) closeNav();
             if (popupOverlay && popupOverlay.style.display === 'flex') closePopup();
+        }
+    });
+
+    // Додаємо закриття меню при кліку на посилання
+    const navLinks = navList ? navList.querySelectorAll('a') : [];
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeNav();
+        });
+    });
+}
+
+// --- Contact form submit ---
+if (contactForm) {
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        openContactPopup();
+        contactForm.reset();
+    });
+}
+
+function openContactPopup() {
+    if (contactPopupOverlay) {
+        contactPopupOverlay.style.display = "flex";
+        contactPopupOverlay.setAttribute("aria-hidden", "false");
+    }
+}
+
+function closeContactPopup() {
+    if (contactPopupOverlay) {
+        contactPopupOverlay.style.display = "none";
+        contactPopupOverlay.setAttribute("aria-hidden", "true");
+    }
+}
+
+if (contactPopupClose) {
+    contactPopupClose.addEventListener("click", closeContactPopup);
+}
+
+if (contactPopupOverlay) {
+    contactPopupOverlay.addEventListener("click", function(e) {
+        if (e.target === contactPopupOverlay) {
+            closeContactPopup();
         }
     });
 }

@@ -57,7 +57,7 @@
         <p>
           <span>Наші концерти</span> — це завжди контакт з залом, драйв і емоції. Приєднуйся до нас на найближчих виступах і відчуй цей саунд наживо!
         </p>
-        <button type="button" class="btn-primary">Замовити квиток</button>
+        <button type="button" class="btn-primary">Заказати квиток</button>
       </div>
     </section>
   
@@ -170,12 +170,12 @@
               </div>
             </div>
 
-          <div class="form-group">
-            <label class="form-label" for="contact-message">Повідомлення</label>
-            <textarea id="contact-message" name="contact_message" placeholder="Розкажи про свої ідеї..."></textarea>
-          </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Повідомлення</label>
+              <textarea id="contact-message" name="contact_message" placeholder="Розкажи про свої ідеї..." required></textarea>
+            </div>
 
-          <button type="submit" class="btn-secondary">Відправити</button>
+            <button type="submit" class="btn-secondary">Відправити</button>
           </form>
   
           <div class="map">
@@ -202,8 +202,8 @@
       <div class="footer-left">
         <p>© 2025 «Грим та Грім». Всі права захищені.</p>
         <p class="contact-line">
-          <span class="email">booking@lotoplay</span>
-          <span class="phone">+38 (099) 123-45-67</span>
+          <a class="email" href="mailto:booking@lotoplay">booking@lotoplay</a>
+          <a class="phone" href="tel:+380991234567">+38 (099) 123-45-67</a>
         </p>
       </div>
   
@@ -216,7 +216,7 @@
     </div>
   </footer>
   
-    <!-- ---------------- POPUP ---------------- -->
+    <!-- ---------------- TICKETS POPUP ---------------- -->
     <div id="popup-overlay" aria-hidden="true">
       <div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
         <button id="popup-close" aria-label="Закрити вікно">&times;</button>
@@ -233,6 +233,14 @@
     </div>
   
   
+    <!-- ----------- CONTACT POPUP ----------- -->
+    <div id="contact-popup-overlay" aria-hidden="true">
+      <div id="contact-popup" role="dialog" aria-modal="true" aria-labelledby="contact-popup-title">
+        <button id="contact-popup-close" aria-label="Закрити вікно">&times;</button>
+        <h2 id="contact-popup-title">Дякуємо за звернення!</h2>
+        <p>Ми зв'яжемося з вами найближчим часом.</p>
+      </div>
+    </div>
   <script type="module" src="./main.js"></script>
   </body>
 </html>

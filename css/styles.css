@@ -22,6 +22,7 @@ p {
 
 a {
     text-decoration: none;
+    color: #ffffff
 }
 
 img {
@@ -35,23 +36,24 @@ ul {
 }
 
 .container {
-  max-width: 600px;       
-  margin: 0 auto;
-  padding: 0 20px;       
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 @media only screen and (min-width: 768px) {
   .container {  
     max-width: 1120px;
-    padding: 0 120px;
+    padding: 0 80px;
   }
 }
 
-
-@media only screen and (min-width: 768px) {
-  .container {  
-    max-width: 1200px;
-  }
+@media only screen and (min-width: 1200px) {
+    .container { 
+        max-width: 1200px; 
+        padding: 0 170px;
+    
+    }
 }
 
 
@@ -66,13 +68,13 @@ ul {
 
 @media only screen and (min-width: 768px) {
 .header-nav {
-    padding: 15px 80px;
+    padding: 15px 60px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
 .header-nav {
-    padding: 20px 190px;
+    padding: 20px 140px;
     
   }
 }
@@ -166,10 +168,18 @@ nav a:hover {
 .hero {
     background-image: linear-gradient( rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.34) ),
       url(../images/background_image.jpeg);
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
       background-position: center;
+      background-size: auto 100%;
       margin: 0 auto;
       transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);  
+}
+
+@media only screen and (min-width: 1200px) { 
+.hero {
+      background-repeat: round;
+  }
 }
 
 h1 {
@@ -200,6 +210,12 @@ h1 {
 .hero-content {
     padding: 80px 120px;
     gap: 30px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+.hero-content { 
+    padding: 120px 170px;
   }
 }
 
@@ -247,7 +263,6 @@ table {
 
 @media only screen and (min-width: 1200px) {
     table {
-    margin: 40px auto;
     margin-bottom: 100px;
   }
 }
@@ -280,13 +295,16 @@ table th {
         display: block;
     }
 
+    table th {
+        display: block;
+    }
+
     table thead tr {
         display: none;
     }
 
-    table thead tr.main-table-title,
     table thead tr:first-child {
-        display: table-row;
+        display: block;
     }
 
     table thead tr.main-table-title th {
@@ -421,7 +439,7 @@ h2 {
 
 @media screen and (min-width: 768px) {
     .member-card img {
-        max-width: 500px;
+        max-width: 600px;
     }
 }
 
@@ -492,7 +510,7 @@ textarea:focus-visible {
     float: right;      
     width: 40%;          
     margin-bottom: 30px;
-    
+
 }
 
 @media (max-width: 768px) {
@@ -500,7 +518,6 @@ textarea:focus-visible {
       float: none;
       width: 100%;
       margin: 20px 0;
-      height: 37vh;
     }
 }
 
@@ -808,11 +825,58 @@ input, textarea {
 .ticket-input {
     background: #333348;
 }
-
-
-
-
-
-
    
-   
+/* --- CONTACT POPUP --- */
+#contact-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#contact-popup {
+    background: #1c1c26;
+    padding: 30px;
+    width: 350px;
+    border-radius: 14px;
+    position: relative;
+    text-align: center;
+}
+
+#contact-popup-close {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.06);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+    z-index: 10;
+}
+
+#contact-popup-close:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-2px);
+}
+
+#contact-popup-close:active {
+    transform: translateY(0);
+}
+
+#contact-popup-close:focus-visible {
+    outline: 3px solid rgba(255,218,79,0.9);
+    outline-offset: 3px;
+}
