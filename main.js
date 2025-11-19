@@ -344,7 +344,6 @@ const App = {
         ContactPopup.init();
         ContactForm.init();
         MobileNavigation.init();
-        console.log('🎸 Rock Band Landing Page initialized successfully!');
     }
 };
 
