@@ -501,7 +501,7 @@ table tr:last-child td {
         gap: 70px;
         padding: 0 30px 30px 30px;
         margin-bottom: 40px;
-        height: 300px;
+        height: 280px;
     }
 
     .member {
@@ -528,7 +528,6 @@ table tr:last-child td {
 .member-card img {
     width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
 @media screen and (min-width: 1200px) {
